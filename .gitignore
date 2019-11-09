@@ -27,3 +27,5 @@
 hs_err_pid*
 docker-mongodb/data/*
 */target
+
+docker-mysql/data/

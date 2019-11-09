@@ -1,0 +1,10 @@
+version: '2'
+services:
+  sonar:
+    container_name: aiwin-rabbit
+    image: aiwin/rabbitmq-stomp:latest
+    ports:
+      - 61613:61613
+      - 15674:15674
+      - 15672:15672
+      - 5672:5672
