@@ -5,6 +5,10 @@
     <modelVersion>4.0.0</modelVersion>
     <modules>
         <module>service-registry</module>
+        <module>data-ingest</module>
+        <module>data-lib</module>
+        <module>data-common-lib</module>
+        <module>data-common</module>
     </modules>
 
     <groupId>com.techbow</groupId>
@@ -34,6 +38,17 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+    </dependencies>
 
     <repositories>
         <repository>

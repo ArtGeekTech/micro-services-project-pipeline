@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: data-ingest
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/microservices?useSSL=false&serverTimezone=PST&useLegacyDatetimeCode=false
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jackson:
+    time-zone: PST
+
+server:
+  port: 9001                    # 指定该Eureka实例的端口
+
+eureka:
+  instance:
+    hostname: localhost         # 指定该Eureka实例的主机名
+  client:
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:8761/eureka/
+
