@@ -1,6 +1,8 @@
 package com.techbow.microservices.common.model.dvo;
 
-public class Payload {
+import java.io.Serializable;
+
+public class Payload implements Serializable {
     private Long clientId;
     private Double temperature;
     private Integer stepCount;
@@ -33,5 +35,14 @@ public class Payload {
         this.clientId = clientId;
         this.temperature = temperature;
         this.stepCount = stepCount;
+    }
+
+    @Override
+    public String toString() {
+        return "Payload{" +
+                "clientId=" + clientId +
+                ", temperature=" + temperature +
+                ", stepCount=" + stepCount +
+                '}';
     }
 }

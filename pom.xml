@@ -6,10 +6,9 @@
     <modules>
         <module>service-registry</module>
         <module>data-ingest</module>
-        <module>data-lib</module>
-        <module>data-common-lib</module>
         <module>data-common</module>
         <module>data-simulator</module>
+        <module>data-processor</module>
     </modules>
 
     <groupId>com.techbow</groupId>
