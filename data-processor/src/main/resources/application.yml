@@ -6,25 +6,20 @@ spring:
     port: 5672
     username: guest
     password: guest
-  data:
-    mongodb:
-      host: localhost
-      port: 27017
-      database: healthdata_db
   datasource:
     url: jdbc:mysql://127.0.0.1:3306/microservices?useSSL=false&serverTimezone=PST&useLegacyDatetimeCode=false
     username: root
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
-  jpa:
-    properties:
-      use_sql_comments: true
-      hibernate:
-        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
-        format_sql: true
-    hibernate:
-      ddl-auto: update
-    show-sql: true
+#  jpa:
+#    properties:
+#      use_sql_comments: true
+#      hibernate:
+#        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+#        format_sql: true
+#    hibernate:
+#      ddl-auto: update
+#    show-sql: true
   jackson:
     time-zone: PST
 

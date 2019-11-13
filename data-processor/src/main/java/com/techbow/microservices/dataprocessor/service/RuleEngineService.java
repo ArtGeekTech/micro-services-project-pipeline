@@ -9,12 +9,12 @@ import org.springframework.stereotype.Component;
 @Component
 public class RuleEngineService {
 
-    public void applyRules(Payload data) {
+    public void applyRulesByCallingREST(Payload data) {
 
-        if (data.getTemperature() > 45.5) {
+        if (data.getTemperature() > 55.5) {
             triggerActionAlert("Temperature too high, pls cool down your body!!!");
         }
-        if (data.getStepCount() < 30) {
+        if (data.getStepCount() < 25) {
             triggerActionAlert("StepCount too little, get up and work out!!!");
         }
     }

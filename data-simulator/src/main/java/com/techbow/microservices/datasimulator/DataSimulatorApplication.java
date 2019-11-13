@@ -1,6 +1,5 @@
 package com.techbow.microservices.datasimulator;
 
-import com.techbow.microservices.common.model.dvo.Data;
 import com.techbow.microservices.common.model.dvo.Payload;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,12 +20,10 @@ public class DataSimulatorApplication {
     private static final Logger logger = LoggerFactory.getLogger(DataSimulatorApplication.class);
 
     private static final String resourceUrl = "http://localhost:9001/ingest/data";
+
     private static final RestTemplate restTemplate = new RestTemplate();
-    private static final Random random = new Random();
-    private static double minVal = 20;
-    private static double maxVal = 100;
+
     private static Timer timer = new Timer();
-    private static int interval = 1000;
 
     public static void main(String[] args) {
         SpringApplication.run(DataSimulatorApplication.class, args);
@@ -44,10 +41,13 @@ public class DataSimulatorApplication {
                 logger.info("POST to: " + resourceUrl + " with request: " + request.toString());
 
             }
-        }, 0, interval);
+        }, 0, 1000);
     }
 
     private static double genRandom() {
+        Random random = new Random();
+        double minVal = 20;
+        double maxVal = 100;
         return minVal + random.nextDouble() * (maxVal - minVal);
     }
 }

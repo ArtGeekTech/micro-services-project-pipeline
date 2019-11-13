@@ -21,23 +21,22 @@ public class DataProcessorController {
     @Autowired
     private RuleEngineService ruleEngineService;
 
-
-    @RabbitListener(queues = Constant.QUEUE_NAME1)  // Subscribe to the Message Queue of history data
+    @RabbitListener(queues = {Constant.QUEUE_HISTORY})  // Subscribe to the Message Queue of history data
     public void process(Payload payload) {
 
         logger.info("Consumed payload from MQ '{}'", payload);
 
-        // apply rule engine and trigger actions
-        ruleEngineService.applyRules(payload);
+        // Call REST API of Rule Engine to apply rules & trigger actions
+        ruleEngineService.applyRulesByCallingREST(payload);
 
         // save to DB
-        dataDao.save(convert(payload));
+        dataDao.save(convertToData(payload));
 
         logger.info("Created data to MySQL '{}'", payload);
         logger.info("Total data num in MySQL is:  " + dataDao.findAll(null).size());
     }
 
-    private Data convert(Payload payload) {
+    private Data convertToData(Payload payload) {
         Data data = new Data();
         data.setClientId(payload.getClientId());
         data.setTemperature(payload.getTemperature());
