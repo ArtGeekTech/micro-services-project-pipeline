@@ -9,6 +9,7 @@
         <module>data-common</module>
         <module>data-simulator</module>
         <module>data-processor</module>
+        <module>data-dashboard</module>
     </modules>
 
     <groupId>com.techbow</groupId>

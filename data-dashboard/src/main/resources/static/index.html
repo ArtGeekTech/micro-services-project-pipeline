@@ -1,0 +1,22 @@
+<html>
+<head>
+    <title>Spring WebSocket Messaging</title>
+    <script src="/webjars/sockjs-client/sockjs.min.js"></script>
+    <script src="/webjars/stomp-websocket/stomp.min.js"></script>
+    <script src="/WebSocketController.js"></script>
+</head>
+<body onload="webSocket.disconnect()">
+<div>
+    <div>
+        <button id="connect" onclick="webSocket.connect();"> Connect to show Real Time Data from Dashboard</button>
+        <button id="disconnect" disabled="disabled" onclick="webSocket.disconnect();">
+            Clear the Dashboard
+        </button>
+    </div>
+    <br/>
+    <div id="realtime">
+        <p id="response"></p>
+    </div>
+</div>
+</body>
+</html>
