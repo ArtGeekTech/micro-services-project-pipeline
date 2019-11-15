@@ -41,7 +41,7 @@ public class DataSimulatorApplication {
                 logger.info("POST to: " + resourceUrl + " with request: " + request.toString());
 
             }
-        }, 0, 1000);
+        }, 0, 10000);
     }
 
     private static double genRandom() {

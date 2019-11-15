@@ -1,7 +1,6 @@
 package com.techbow.microservices.datadashboard.controller;
 
 import com.techbow.microservices.common.config.Constant;
-import com.techbow.microservices.common.model.dvo.Data;
 import com.techbow.microservices.common.model.dvo.Payload;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
